@@ -3,7 +3,7 @@
 namespace OCFram;
 
 
-class HTTPResponse {
+class HTTPResponse extends ApplicationComponent {
 
     protected $page;
 
@@ -24,7 +24,11 @@ class HTTPResponse {
         exit($this->page->getGeneratedPage());
     }
 
-    public function setCookie($name) {
-        setcookie($name,'',0,null,false,true);
+    public function setPage(Page $page) {
+        $this->page = $page;
+    }
+
+    public function setCookie($name, $value = '', $expire  = 0, $path = null, $domain = null, $secure = false, $httpOnly = true) {
+        setcookie($name, $value, $expire, $path, $domain, $secure, $httpOnly);
     }
 }

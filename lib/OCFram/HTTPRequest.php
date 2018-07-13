@@ -2,7 +2,7 @@
 
 namespace OCFram;
 
-class HTTPRequest {
+class HTTPRequest extends ApplicationComponent {
 
     /**
      * Return requested cookie's data
