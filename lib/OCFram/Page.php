@@ -14,10 +14,12 @@ class Page extends ApplicationComponent {
         $this->vars[$var] = value;
     }
 
-    public function setGeneratedPage() {
+    public function getGeneratedPage() {
         if (!file_exists($this->contentFile)) {
             throw new \RuntimeException('La vue spécifiée n\'existe pa ');
         }
+
+        $user = $this->app->user();
 
         extract($this->vars);
 
